@@ -1,0 +1,5 @@
+
+
+virt-install --name=worker02 --os-type=Linux --os-variant=generic --vcpu=16 --ram=16384 --disk path=/OpenShift/worker02.qcow2,size=120 --graphics spice --cdrom /var/lib/libvirt/images/rhcos-live.x86_64.iso --network bridge:br0
+
+
