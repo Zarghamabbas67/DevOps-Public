@@ -1,0 +1,37 @@
+https://woshub.com/check-disk-performance-iops-latency-linux/#:~:text=How%20to%20Check%20Disk%20Performance%20%28IOPS%20and%20Latency%29,...%203%20Measuring%20Disk%20Latency%20Using%20Ioping%20
+
+yum install epel-release -y
+yum install fio -y
+
+Random Read/Write Operation Test
+
+When running the test, an 8 GB file will be created. Then fio will read/write a 4KB block (a standard block size) with the 75/25% by the number of reads and writes operations and measure the performance. The command is as follows:
+
+fio --randrepeat=1 --ioengine=libaio --direct=1 --gtod_reduce=1 --name=fiotest --filename=testfio --bs=4k --iodepth=64 --size=8G --readwrite=randrw --rwmixread=75
+
+--readwrite=randrw
+can be changed to = randread || randwrite
+
+vi file.txt
+[global]
+rw=randread
+size=8G
+filename=/tmp/testfio
+ioengine=libaio
+iodepth=4
+invalidate=1
+direct=1
+[bgread]
+rw=randrw
+iodepth=64
+
+Then start the test:
+fio read.fio
+
+
+============================
+
+yum install iotop;
+yum install sysstat;
+iostat -xd <update interval in seconds> --per device io stat
+iostat -pxd <update interval in seconds> --per partition io stat

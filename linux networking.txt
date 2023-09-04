@@ -1,0 +1,39 @@
+Linux package management is a system that allows you to install, update and remove software on your Linux system. It is usually provided by your Linux distribution in the form of a package manager, such as apt, yum or dnf. 
+It enables users to install, uninstall, upgrade, configure, and manage software packages on their operating system. 
+
+===== REDHAT yum 
+Configure repositories
+
+/etc/yum.repos.d/server.repo
+
+yum clean all
+yum update
+yum install nginx
+yum --downloadonly 
+yum localinstall *.rpm
+
+Linux Networking ============
+
+Command	Description
+ip	Manipulating routing to assigning and configuring network parameters
+traceroute	Identify the route taken by packets to reach the host
+tracepath	Gets maximum transmission unit while tracing the path to the network host
+ping	Often used to check the connectivity between the host and the server
+ss	Gets details about network sockets
+dig	Gives all the necessary information about the DNS name server
+host	Prints IP address of a specific domain and viscera
+hostname	Mostly used to print and change the hostname
+curl	Transfers data over the network by supporting various protocols
+mtr	A combination of ping and traceroute is used to diagnose the network
+whois	Gets info about registered domains, IP addresses, name servers, and more
+ifplugstatus	Detects the link status of a local Ethernet device
+iftop	Monitors stats related to bandwidth
+tcpdump	Packet sniffing and analyzing utility used to capture, analyze and filter network traffic
+ethtool	Allows users to configure Ethernet devices
+nmcli	Troubleshooting utility for network connections
+nmap	Primarily used to audit network security
+bmon	An open-source utility to monitor real-time bandwidth
+firewalld	CLI tool to configure rules of Firewall
+iperf	Utility to measure network performance and tuning
+speedtest-cli	CLI utility of speedtest.net to check internet speeds
+vnstat	Mostly used to monitor network traffic and bandwidth consumption
